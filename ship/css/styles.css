@@ -1,0 +1,131 @@
+
+/*
+ *
+ * GLOBAL
+ *
+ */
+body{
+	background-color: #ccc;
+}
+*{
+	font-family: 'Athiti', sans-serif;
+}
+.container{
+	width: 900px;
+	margin: 0 auto;
+}
+#parallelogram {
+	width: 240px;
+	height: 60px;
+	-webkit-transform: skew(20deg);
+	  -moz-transform: skew(20deg);
+	    -o-transform: skew(20deg);
+	background: #c33;
+	margin-left: -10px;
+}
+h1{
+	padding-left: 40px;
+	width: 100%;
+	-webkit-transform: skew(-20deg);
+	  -moz-transform: skew(-20deg);
+	    -o-transform: skew(-20deg);
+}
+nav{
+	width: 100px;
+}
+nav ul{
+	display: inline;
+
+}
+/*
+ *
+ * SHIP BUILDER
+ *
+ */
+.ship-builder{
+	margin: 20px 0;
+	float: left;
+	width: 500px;
+}
+.ship-builder p{
+	margin: 15px 0 1px ;
+}
+#nextStep, #fuelStep, #mobilityStep{
+	display: none;
+}
+.notes{
+	width: 300px;
+	border: 1px solid #999;
+	padding: 10px;
+	position: fixed;
+	margin-top: -50px;
+	left: 60%;
+}
+.notes #tonNote{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: .8em;
+	text-transform: uppercase;
+	color: #c33;
+}
+.notes #barMax{
+	width: 100%;
+	background-color: #c33;
+	margin: 5px auto;
+	height: 10px;
+	border: 1px solid #000;
+}
+.notes #barUsed{
+	background-color: #fff;
+	margin-left: 0%;
+	height: 10px;
+}
+.notes p{
+	padding: 3px;
+	margin: 0;
+}
+/*
+ *
+ * MAP
+ *
+ */
+ .map{
+	width: 600px;
+	height: 600px;
+	margin: 30px auto 0;
+	border: 1px solid #000;
+}
+.map-grid{
+	float: left;
+	width: 200px;
+	height: 200px;
+	display: inline;
+}
+#mapNorth, #mapWest, #mapEast, #mapSouth{
+	background-color: #bbb;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+#mapNorthWest, #mapNorthEast, #mapCentral, #mapSouthWest, #mapSouthEast{
+	background-color: #ccc;
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-ms-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+#mapNorthWest:hover, 
+#mapNorthEast:hover, 
+#mapCentral:hover, 
+#mapSouthWest:hover, 
+#mapSouthEast:hover, 
+#mapNorth:hover, 
+#mapWest:hover, 
+#mapEast:hover, 
+#mapSouth:hover{
+	background-color: #eee;
+}
