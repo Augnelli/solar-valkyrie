@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<META charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Athiti" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<title>Building a Space Ship The Expensive Way</title>
+	</head>
+	<body>
+		<div class="container">
+			<header >
+					<h1 id="parallelogram"><a href="index.html">Solar Valkyrie</a></h1>
+					<nav>
+						<ul>
+							<a href="map.html"><li>Map</li></a>
+							<a href="ship.html"><li>Ship</li></a>
+						</ul>
+					</nav>
+			</header>
+			<div class="ship-builder" method="get">
+			<!-- gathers basic info from the user -->
+				<form name="details">
+					<p>This is your ships name.</p>
+					<input type="text" id="shipName" name="inputBoxName" autocomplete="off">
+					<br>
+					<p>Select a ship role.</p>
+					<select id="shipRole" onchange="roleSwitch()">
+						<option value="noneSelected">Role...</option>
+						<option value="Combat">Combat</option>
+						<option value="Exploration">Exploration</option>
+						<option value="Trade">Trade</option>
+						<option value="Mining">Mining</option>
+					</select>
+					<br>
+					<p>Select a tech level.</p>
+					<select id="techLevel" onchange="tlSwitch()">
+						<option value="noneSelected">TL...</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+					<br>
+					<p>Select a basic design.</p>
+					<select id="shipDesign" onchange="designSwitch()">
+						<option value="noneSelected">Design...</option>
+						<option value="Standard">Standard</option>
+						<option value="Streamlined">Streamlined</option>
+						<option value="Distributed">Distributed</option>
+					</select>
+					<br>
+					<br>
+					<input type="button" name="button" value="Update" onclick="shipDescription(this.form)">
+				</form>
+				<p><span id="description"></span><span id="information"></span></p>
+				
+				<!-- nextStep is overall tons, fuel, and armor -->
+				<div id="nextStep">
+					<p>Next we are going to input the size of the ship, in displacement tonnage.</p>
+					<form name="ship-tonnage" action="" method="get">Enter a number <strong>between 100 and 2000</strong>: <br>
+						<input type="text" id="shipTons" name="inputbox">
+						<br>
+						<input type="button" name="button" Value="Update" onclick="tonnageValidation(this.form)">
+						<p id="tonnageValidation"></p>
+				
+					<!-- fuel -->
+					<div id="fuelStep">
+						<form name="ship-fuel" action="" method="get">
+							<p>How much tonnage do you want to allocate to fuel? <span id="fuelRequired"></span></p>
+							<input type="text" id="shipFuel" name="inputbox">
+							<br>
+							<input type="button" name="button" value="Update" onclick="fuelTonnage(this.form)">
+						</form>
+						<p id="fuelText"></p>
+					</div>
+
+					<!-- mobility -->
+					<div id="mobilityStep">
+						<form name="ship-mobility" action="" method="get">
+							<p>What kind of mobility do you want your ship to have?</p>
+							<select id="mDrive">
+								<option value="noneSelected">M-Drive...</option>
+								<option value="Solar Sails">Solar Sails</option>
+								<option value="Ion Drive">Ion Drive</option>
+								<option value="Fusion Drive">Fusion Core Thrusters</option>
+
+							</select>
+							<br>
+							<input type="button" name="button" value="Update" onclick="mobility(this.form)">
+						</form>
+						<p id="mobilityText"></p>
+					</div>
+				</form>
+				</div>
+
+				
+
+			</div>
+			<!-- notes section -->
+			<div class="notes">
+				<p id="tonNote">Allocated Tonnage: <strong><span id="tonsUsed">0</span></strong> of <strong><span id="tonsMax">0</span></strong></p>
+				<div id="barMax">
+					<div id="barUsed"></div>
+				</div>
+				<p>HP: <span id="hullHealth">XX</span> | Armor:<span id="armorRating">XX</span></p>
+				<p id="roleNotes">Select a role.</p>
+				<p id="tlNotes">Select a TL.</p>
+				<p id="designNotes">Select a design.</p>
+				<!--<input type="button" name="button" value="Restart" onclick="restartShip()">-->
+			</div>
+			<!--closes ship builder-->
+		</div>
+		<!-- closes container -->
+		<script type="text/javascript" src="js/shipobjects.js"></script>
+	</body>
+</html>
